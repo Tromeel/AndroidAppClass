@@ -28,12 +28,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.R
+import com.tromeel.swaggy.navigation.ROUT_ITEM
 import com.tromeel.swaggy.ui.theme.Parple
 import com.tromeel.swaggy.ui.theme.Parplelight
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController: NavController){
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -86,7 +89,9 @@ fun HomeScreen(){
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(ROUT_ITEM)
+            },
             colors = ButtonDefaults.buttonColors(Parple),
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier
@@ -112,7 +117,7 @@ fun HomeScreen(){
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview(){
-    HomeScreen()
+    HomeScreen(rememberNavController())
 }
 
 

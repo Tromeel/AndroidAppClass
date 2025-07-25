@@ -30,6 +30,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.R
 import com.tromeel.swaggy.ui.theme.DarkBlue
 import com.tromeel.swaggy.ui.theme.Parple
@@ -38,7 +40,7 @@ import java.util.concurrent.locks.AbstractOwnableSynchronizer
 
 
 @Composable
-fun AboutScreen(){
+fun AboutScreen(navController: NavController){
     Column (
         modifier = Modifier
             .fillMaxSize(),
@@ -148,5 +150,5 @@ fun AboutScreen(){
 @Preview(showBackground = true)
 @Composable
 fun AboutScreenPreview(){
-    AboutScreen()
+    AboutScreen(rememberNavController())
 }
