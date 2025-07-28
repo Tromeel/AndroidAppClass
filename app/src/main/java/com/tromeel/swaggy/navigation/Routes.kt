@@ -5,5 +5,6 @@ const val ROUT_ABOUT = "about"
 const val ROUT_CONTACT = "contact"
 const val ROUT_ITEM = "item"
 const val ROUT_CATEGORY = "category"
+const val ROUT_SPLASH = "splash"
 
 

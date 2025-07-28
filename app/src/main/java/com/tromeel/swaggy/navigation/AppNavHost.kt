@@ -11,13 +11,14 @@ import com.tromeel.swaggy.ui.screens.category.CategoryScreen
 import com.tromeel.swaggy.ui.screens.contact.ContactScreen
 import com.tromeel.swaggy.ui.screens.home.HomeScreen
 import com.tromeel.swaggy.ui.screens.home.ItemScreen
+import com.tromeel.swaggy.ui.screens.splash.SplashScreen
 
 @Composable
 
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_HOME
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -42,6 +43,10 @@ fun AppNavHost(
 
         composable(ROUT_CATEGORY) {
             CategoryScreen(navController)
+        }
+
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
         }
 
     }
