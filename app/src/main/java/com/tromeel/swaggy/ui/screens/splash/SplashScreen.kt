@@ -2,6 +2,7 @@ package com.tromeel.swaggy.ui.screens.splash
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -35,6 +36,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.tromeel.swaggy.R
 import com.tromeel.swaggy.navigation.ROUT_HOME
 import com.tromeel.swaggy.ui.theme.Parple
+import com.tromeel.swaggy.ui.theme.Parplelight
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -52,9 +54,12 @@ fun SplashScreen(navController: NavController){
 
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .background(color = Parplelight)
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
+
         
 
     ) {

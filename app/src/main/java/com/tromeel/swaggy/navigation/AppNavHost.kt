@@ -9,8 +9,10 @@ import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.ui.screens.about.AboutScreen
 import com.tromeel.swaggy.ui.screens.category.CategoryScreen
 import com.tromeel.swaggy.ui.screens.contact.ContactScreen
+import com.tromeel.swaggy.ui.screens.details.DetailScreen
 import com.tromeel.swaggy.ui.screens.home.HomeScreen
 import com.tromeel.swaggy.ui.screens.home.ItemScreen
+import com.tromeel.swaggy.ui.screens.scaffold.ScaffoldScreen
 import com.tromeel.swaggy.ui.screens.splash.SplashScreen
 
 @Composable
@@ -48,6 +50,18 @@ fun AppNavHost(
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
         }
+
+        composable(ROUT_SCAFFOLD) {
+            ScaffoldScreen(navController)
+        }
+
+
+        composable(ROUT_DETAIL) {
+            DetailScreen(navController)
+        }
+
+
+
 
     }
 }

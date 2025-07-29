@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.R
+import com.tromeel.swaggy.navigation.ROUT_DETAIL
 import com.tromeel.swaggy.navigation.ROUT_ITEM
 import com.tromeel.swaggy.ui.theme.Parple
 
@@ -241,7 +242,7 @@ fun CategoryScreen(navController: NavController){
 
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                navController.navigate(ROUT_DETAIL)
             },
             colors = ButtonDefaults.buttonColors(Parple),
             shape = RoundedCornerShape(10.dp),
