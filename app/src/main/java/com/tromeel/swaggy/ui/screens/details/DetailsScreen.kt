@@ -48,6 +48,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -61,6 +62,7 @@ import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.R
 import com.tromeel.swaggy.navigation.ROUT_CATEGORY
 import com.tromeel.swaggy.navigation.ROUT_HOME
+import com.tromeel.swaggy.navigation.ROUT_INTENT
 import com.tromeel.swaggy.navigation.ROUT_ITEM
 import com.tromeel.swaggy.ui.theme.Parple
 import com.tromeel.swaggy.ui.theme.Parplelight
@@ -157,7 +159,7 @@ fun DetailScreen(navController: NavController){
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = {navController.navigate(ROUT_INTENT) },
                 containerColor = Parple
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
@@ -168,7 +170,8 @@ fun DetailScreen(navController: NavController){
                 modifier = Modifier
                     .padding(paddingValues)
                     .fillMaxSize()
-                    .background(color = Parplelight)
+                    .paint(painter = painterResource(R.drawable.bg), contentScale = ContentScale.FillBounds)
+
 
             ) {
 
@@ -262,7 +265,7 @@ fun DetailScreen(navController: NavController){
                 Row (
                     modifier = Modifier
                         .padding(start = 20.dp)
-                        .horizontalScroll(rememberScrollState())
+                        .horizontalScroll(rememberScrollState())  //SCROLL
 
                 ){
                     //Start of card

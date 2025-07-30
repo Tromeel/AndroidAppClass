@@ -12,6 +12,7 @@ import com.tromeel.swaggy.ui.screens.contact.ContactScreen
 import com.tromeel.swaggy.ui.screens.details.DetailScreen
 import com.tromeel.swaggy.ui.screens.home.HomeScreen
 import com.tromeel.swaggy.ui.screens.home.ItemScreen
+import com.tromeel.swaggy.ui.screens.intent.IntentScreen
 import com.tromeel.swaggy.ui.screens.scaffold.ScaffoldScreen
 import com.tromeel.swaggy.ui.screens.splash.SplashScreen
 
@@ -59,6 +60,13 @@ fun AppNavHost(
         composable(ROUT_DETAIL) {
             DetailScreen(navController)
         }
+
+
+
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
+        }
+
 
 
 

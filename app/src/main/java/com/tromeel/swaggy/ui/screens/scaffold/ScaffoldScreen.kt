@@ -28,13 +28,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.tromeel.swaggy.R
 import com.tromeel.swaggy.navigation.ROUT_CATEGORY
+import com.tromeel.swaggy.navigation.ROUT_DETAIL
 import com.tromeel.swaggy.navigation.ROUT_HOME
 import com.tromeel.swaggy.navigation.ROUT_ITEM
 import com.tromeel.swaggy.ui.theme.Parple
@@ -53,9 +58,9 @@ fun ScaffoldScreen(navController: NavController){
         //TopBar
         topBar = {
             TopAppBar(
-                title = { Text("Item Screen") },
+                title = { Text("Explore Intents") },
                 navigationIcon = {
-                    IconButton(onClick = { navController.navigate(ROUT_ITEM) }) {
+                    IconButton(onClick = { navController.navigate(ROUT_DETAIL) }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
                 },
@@ -114,7 +119,8 @@ fun ScaffoldScreen(navController: NavController){
                 modifier = Modifier
                     .padding(paddingValues)
                     .fillMaxSize()
-                    .background(color = Parplelight)
+                    .paint(painter = painterResource(R.drawable.bg), contentScale = ContentScale.FillBounds)
+
             ) {
 
 

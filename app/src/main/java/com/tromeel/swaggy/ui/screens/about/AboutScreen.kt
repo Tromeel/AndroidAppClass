@@ -21,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -43,9 +44,12 @@ import java.util.concurrent.locks.AbstractOwnableSynchronizer
 fun AboutScreen(navController: NavController){
     Column (
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .paint(painter = painterResource(R.drawable.bg), contentScale = ContentScale.FillBounds)
+        ,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement =  Arrangement.Center,
+
 
 
         ){

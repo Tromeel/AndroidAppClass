@@ -40,8 +40,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -61,10 +63,12 @@ import com.tromeel.swaggy.ui.theme.Parplelight
 @Composable
 
 fun ItemScreen (navController: NavController){
+    val mContext = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Parplelight)
+            .paint(painter = painterResource(R.drawable.bg), contentScale = ContentScale.FillBounds)
+
     ) {
         //TopAppBar
         TopAppBar(
@@ -192,7 +196,12 @@ fun ItemScreen (navController: NavController){
                     Spacer(modifier = Modifier.height(10.dp))
 
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val simToolKitLaunchIntent =
+                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+
+                        },
                         colors = ButtonDefaults.buttonColors(containerColor = Parple),
                         shape = RoundedCornerShape(10.dp),
                     ) {
@@ -246,7 +255,11 @@ fun ItemScreen (navController: NavController){
                     Spacer(modifier = Modifier.height(10.dp))
 
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val simToolKitLaunchIntent =
+                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                            simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                        },
                         colors = ButtonDefaults.buttonColors(containerColor = Parple),
                         shape = RoundedCornerShape(10.dp),
                     ) {

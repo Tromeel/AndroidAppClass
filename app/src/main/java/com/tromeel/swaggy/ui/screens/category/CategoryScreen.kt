@@ -28,6 +28,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -51,6 +52,8 @@ fun CategoryScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .paint(painter = painterResource(R.drawable.bg), contentScale = ContentScale.FillBounds)
+
 
 
     ) {
