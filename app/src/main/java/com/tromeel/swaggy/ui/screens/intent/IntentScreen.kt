@@ -51,6 +51,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.R
 import com.tromeel.swaggy.navigation.ROUT_CATEGORY
+import com.tromeel.swaggy.navigation.ROUT_DASHBOARD
 import com.tromeel.swaggy.navigation.ROUT_HOME
 import com.tromeel.swaggy.navigation.ROUT_ITEM
 import com.tromeel.swaggy.ui.theme.Parple
@@ -74,12 +75,17 @@ fun IntentScreen(navController: NavController){
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
                 },
+                
+
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Parple,
                     titleContentColor = Color.White,
                     navigationIconContentColor = Color.White
                 )
+
+
             )
+
         },
 
         //BottomBar
@@ -118,7 +124,7 @@ fun IntentScreen(navController: NavController){
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = {navController.navigate(ROUT_DASHBOARD) },
                 containerColor = Parple
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
