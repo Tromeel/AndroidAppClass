@@ -9,7 +9,9 @@ import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.ui.screens.about.AboutScreen
 import com.tromeel.swaggy.ui.screens.category.CategoryScreen
 import com.tromeel.swaggy.ui.screens.contact.ContactScreen
+import com.tromeel.swaggy.ui.screens.dashboard.DashboardScreen2
 import com.tromeel.swaggy.ui.screens.dashboard.DashboardScreen
+import com.tromeel.swaggy.ui.screens.dashboard.DashboardScreen2
 import com.tromeel.swaggy.ui.screens.details.DetailScreen
 import com.tromeel.swaggy.ui.screens.home.HomeScreen
 import com.tromeel.swaggy.ui.screens.home.ItemScreen
@@ -71,6 +73,13 @@ fun AppNavHost(
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController)
         }
+
+
+        composable(ROUT_DASHBOARD2) {
+            DashboardScreen2(navController)
+        }
+
+
 
 
 

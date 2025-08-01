@@ -60,6 +60,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.tromeel.swaggy.R
 import com.tromeel.swaggy.navigation.ROUT_CATEGORY
+import com.tromeel.swaggy.navigation.ROUT_DASHBOARD2
 import com.tromeel.swaggy.navigation.ROUT_DETAIL
 import com.tromeel.swaggy.navigation.ROUT_HOME
 import com.tromeel.swaggy.ui.theme.Orange
@@ -124,12 +125,18 @@ fun DashboardScreen(navController: NavController){
                     .verticalScroll(rememberScrollState())
 
 
+
             ) {
                 Row(
+                    modifier = Modifier.background(Color.White)
 
                 ) {
 
                     Column(
+
+
+
+
 
                     ) {
                         Spacer(modifier = Modifier.height(50.dp))
@@ -170,11 +177,14 @@ fun DashboardScreen(navController: NavController){
                 Spacer(modifier = Modifier.height(10.dp))
 
                 Row (
-                    Modifier.horizontalScroll(rememberScrollState())
+                    Modifier
+                        .horizontalScroll(rememberScrollState())
 
                 ){
                     //CARD
-                    Card(onClick = {},
+                    Card(onClick = {
+                        navController.navigate(ROUT_DASHBOARD2)
+                    },
                         Modifier
                             .height(300.dp)
                             .width(180.dp)
@@ -211,7 +221,7 @@ fun DashboardScreen(navController: NavController){
                             Spacer(modifier = Modifier.height(10.dp))
 
                             Text(
-                                text = "Cryptocurrency Leading page",
+                                text = "Cryptocurrency Landing page",
                                 fontSize = 15.sp,
                                 modifier = Modifier.padding(start = 20.dp, end = 20.dp)
                                 ,
@@ -356,8 +366,9 @@ fun DashboardScreen(navController: NavController){
 
                    Column(
                        modifier = Modifier
-                           .background(Color.LightGray)
-                           .fillMaxHeight()
+
+
+
 
 
                    ) {
@@ -376,7 +387,7 @@ fun DashboardScreen(navController: NavController){
                            onClick = {},
                            modifier = Modifier
                                .fillMaxWidth()
-                               .height(70.dp)
+                               .height(60.dp)
                                .padding(start = 20.dp, end = 20.dp)
 
                            ) {
@@ -384,13 +395,16 @@ fun DashboardScreen(navController: NavController){
 
 
 
-                           
+
+
+
                            Row (
                                modifier = Modifier
                                    .padding(top = 10.dp, bottom = 10.dp, )
-                                   .fillMaxWidth()
+
 
                            ){
+
 
 
 
@@ -404,19 +418,13 @@ fun DashboardScreen(navController: NavController){
                                        .padding(start = 10.dp, bottom = 10.dp)
 
                                )
+
+
                                Column(
 
                                ) {
 
-                                   Box(modifier = Modifier
-                                       .size(10.dp)
-                                       .background(color = Color.Gray, shape = CircleShape)
-                                       .align(alignment = Alignment.End)
 
-
-
-
-                                   )
 
 
 
@@ -448,6 +456,9 @@ fun DashboardScreen(navController: NavController){
 
 
                                }
+                               Row {
+
+                               }
 
 
 
@@ -467,7 +478,7 @@ fun DashboardScreen(navController: NavController){
                            onClick = {},
                            modifier = Modifier
                                .fillMaxWidth()
-                               .height(70.dp)
+                               .height(60.dp)
                                .padding(start = 20.dp, end = 20.dp)
                        ) {
                            Row (
