@@ -11,5 +11,6 @@ const val ROUT_DETAIL = "detail"
 const val ROUT_INTENT = "intent"
 const val ROUT_DASHBOARD = "Dashboard"
 const val ROUT_DASHBOARD2 = "Dashboard2"
+const val ROUT_FORM = "Form"
 
 

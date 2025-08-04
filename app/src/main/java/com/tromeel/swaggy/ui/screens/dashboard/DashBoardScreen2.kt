@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -45,7 +46,7 @@ fun DashboardScreen2(navController: NavController){
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(400.dp),
+                .height(350.dp),
             shape = RoundedCornerShape(bottomStart = 60.dp),
             colors = CardDefaults.cardColors(LGreen)
 
@@ -76,15 +77,14 @@ fun DashboardScreen2(navController: NavController){
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-              Column {
+
                   Row (
-                      horizontalArrangement = Arrangement.Center,
                       modifier = Modifier.padding(20.dp)
 
 
                   ){
                       Image(
-                          painter = painterResource(R.drawable.woman),
+                          painter = painterResource(R.drawable.woman1),
                           contentDescription = "graph",
                           modifier = Modifier
                               .size(30.dp)
@@ -103,23 +103,16 @@ fun DashboardScreen2(navController: NavController){
                       )
 
 
-                      Image(
-                          painter = painterResource(R.drawable.woman),
-                          contentDescription = "graph",
-                          modifier = Modifier
-                              .width(200.dp)
 
 
 
-
-
-
-                      )
 
 
 
                   }
-                  Column {
+                  Row(
+
+                  ) {
                       Text(
                           text = "Lorem ipsum dolor sit amet, consectotut adipsicing elist, sed do eemistut tempor incudiunt ut fabore et eltore magnus.",
                           fontSize = 15.sp,
@@ -131,9 +124,19 @@ fun DashboardScreen2(navController: NavController){
                       )
 
 
+
+
+
+
+
+
                   }
 
-              }
+
+
+
+
+
 
 
 
@@ -141,17 +144,22 @@ fun DashboardScreen2(navController: NavController){
 
             }
 
+
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+
+        Spacer(modifier = Modifier.height(40.dp))
+
 
         /// ROW
 
         Row (
             modifier = Modifier
                 .padding(start = 20.dp, end = 20.dp),
+
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
+
 
             
 
@@ -162,6 +170,7 @@ fun DashboardScreen2(navController: NavController){
             Column (
                 modifier = Modifier
                     .padding(end = 10.dp)
+
 
             ){
                 Image(
@@ -457,6 +466,10 @@ fun DashboardScreen2(navController: NavController){
 
 
         }
+
+
+
+
 
     }
 

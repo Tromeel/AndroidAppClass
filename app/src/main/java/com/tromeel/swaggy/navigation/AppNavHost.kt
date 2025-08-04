@@ -13,6 +13,7 @@ import com.tromeel.swaggy.ui.screens.dashboard.DashboardScreen2
 import com.tromeel.swaggy.ui.screens.dashboard.DashboardScreen
 import com.tromeel.swaggy.ui.screens.dashboard.DashboardScreen2
 import com.tromeel.swaggy.ui.screens.details.DetailScreen
+import com.tromeel.swaggy.ui.screens.form.FormScreen
 import com.tromeel.swaggy.ui.screens.home.HomeScreen
 import com.tromeel.swaggy.ui.screens.home.ItemScreen
 import com.tromeel.swaggy.ui.screens.intent.IntentScreen
@@ -77,6 +78,10 @@ fun AppNavHost(
 
         composable(ROUT_DASHBOARD2) {
             DashboardScreen2(navController)
+        }
+
+        composable(ROUT_FORM) {
+            FormScreen(navController)
         }
 
 
