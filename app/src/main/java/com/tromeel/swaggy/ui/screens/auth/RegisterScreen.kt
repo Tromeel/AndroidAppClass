@@ -62,6 +62,7 @@ fun RegisterScreen(
 
     // This color is defined but not used for the overall Column background in this version
     // val purpleBackgroundColor = Color(0xFF6200EA)
+    val dropdownMenuPurpleColor = Color(0xFF6200EA) // Define your desired purple for the dropdown
 
     Column(
         modifier = Modifier
@@ -84,7 +85,7 @@ fun RegisterScreen(
 
         AnimatedVisibility(visible = true, enter = fadeIn(), exit = fadeOut()) {
             Text(
-                "Create Your Account",
+                "Sign Up",
                 fontSize = 40.sp,
                 fontFamily = FontFamily.Cursive,
                 color = Color.White // Text color for contrast against R.drawable.bg
@@ -93,8 +94,7 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        //Username (assuming R.drawable.bg provides enough contrast for default text field colors,
-        // otherwise, you'd apply custom colors as in the previous examples)
+        //Username
         OutlinedTextField(
             value = username,
             onValueChange = { username = it },
@@ -141,7 +141,7 @@ fun RegisterScreen(
 
         //Role
         var role by remember { mutableStateOf("Buyer") }
-        val roleOptions = listOf("Buyer", "Seller")
+        val roleOptions = listOf("Buyer", "Admin")
         var expanded by remember { mutableStateOf(false) }
 
         ExposedDropdownMenuBox(
@@ -153,7 +153,7 @@ fun RegisterScreen(
                 onValueChange = {},
                 readOnly = true,
                 label = { Text("Select Role", color = Color.White) },
-                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded, ) },
+                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded, ) }, // Keep icon tint white for contrast
                 modifier = Modifier
                     .menuAnchor()
                     .fillMaxWidth(),
@@ -163,24 +163,32 @@ fun RegisterScreen(
                     focusedTextColor = Color.White,
                     unfocusedTextColor = Color.White,
                     focusedTrailingIconColor = Color.White,
-                    unfocusedTrailingIconColor = Color.White,
+                    unfocusedTrailingIconColor = Color.White, // Ensure this is also a light/contrasting color
                     focusedLabelColor = Color.White,
                     unfocusedLabelColor = Color.LightGray,
-                    cursorColor = Color.White
+                    cursorColor = Color.White,
+                    // Ensure the background of the text field itself is transparent or blends well
+                    // if you have a custom background on it. Default is usually fine.
+                    // For M3 ExposedDropdownMenu, the text field background is part of the theme.
+                    // If your R.drawable.bg is dark, ensure these colors offer good contrast.
+                    // The text field will show the selected role "Buyer" or "Seller".
+                    // This text color is `focusedTextColor`/`unfocusedTextColor`.
                 )
             )
             ExposedDropdownMenu(
                 expanded = expanded,
                 onDismissRequest = { expanded = false },
-                modifier = Modifier.background(MaterialTheme.colorScheme.surfaceVariant)
+                modifier = Modifier.background(dropdownMenuPurpleColor) // Apply purple background here
             ) {
                 roleOptions.forEach { selectionOption ->
                     DropdownMenuItem(
-                        text = { Text(selectionOption, color = MaterialTheme.colorScheme.onSurfaceVariant) },
+                        text = { Text(selectionOption, color = Color.White) }, // Ensure text on purple is readable (e.g., White)
                         onClick = {
                             role = selectionOption
                             expanded = false
                         }
+                        // You can also customize DropdownMenuItem colors if needed:
+                        // colors = MenuDefaults.itemColors(textColor = Color.White)
                     )
                 }
             }

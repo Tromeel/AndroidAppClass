@@ -35,8 +35,10 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.tromeel.swaggy.R
+import com.tromeel.swaggy.navigation.ROUT_ADD_PRODUCT
 import com.tromeel.swaggy.navigation.ROUT_DASHBOARD2
 import com.tromeel.swaggy.navigation.ROUT_HOME
+import com.tromeel.swaggy.navigation.ROUT_PRODUCT_LIST
 import com.tromeel.swaggy.navigation.ROUT_REGISTER
 import com.tromeel.swaggy.viewmodel.AuthViewModel
 
@@ -58,11 +60,13 @@ fun LoginScreen(
                 Toast.makeText(context, "Invalid Credentials", Toast.LENGTH_SHORT).show()
             } else {
                 if (user.role == "Buyer") {
-                    navController.navigate(ROUT_DASHBOARD2) {
+                    navController.navigate(ROUT_PRODUCT_LIST) {
                     }
+
                 } else {
-                    navController.navigate(ROUT_HOME) {
+                    navController.navigate(ROUT_ADD_PRODUCT) {
                     }
+
                 }
             }
         }
