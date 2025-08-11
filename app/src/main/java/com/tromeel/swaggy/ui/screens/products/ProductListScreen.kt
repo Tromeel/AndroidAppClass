@@ -55,6 +55,8 @@ import java.io.OutputStream
 @Composable
 fun ProductListScreen(navController: NavController, viewModel: ProductViewModel) {
     val productList by viewModel.allProducts.observeAsState(emptyList())
+
+    3
     var showMenu by remember { mutableStateOf(false) }
     var searchQuery by remember { mutableStateOf("") }
 
